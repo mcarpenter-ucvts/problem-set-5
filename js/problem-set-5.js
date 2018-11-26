@@ -28,10 +28,11 @@ function mario() {
 
   // WRITE YOUR EXERCISE 1 CODE
 
+
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
-}
+
 
 /*
  * Mario, Again. 10 points.
@@ -62,6 +63,7 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -213,34 +215,39 @@ function hurricane() {
 
   }
 
-  if (windspeed > 130 && windspeed < 156) {
+  if (windspeed >= 130 && windspeed <= 156) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Category 4 Hurricane.";
 
   }
 
-  if (windspeed > 111 && windspeed < 129) {
+  if (windspeed >= 111 && windspeed <= 129) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Category 3 Hurricane.";
 
   }
 
-  if (windspeed > 96 && windspeed < 110) {
+  if (windspeed >= 96 && windspeed <= 110) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Category 2 Hurricane.";
 
   }
 
-  if (windspeed > 74 && windspeed < 95) {
+  if (windspeed >= 74 && windspeed <= 95) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Category 1 Hurricane.";
 
   }
 
-  if (windspeed > 39 && windspeed < 73) {
+  if (windspeed >= 39 && windspeed <= 73) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Tropical Storm.";
 
+  }
+
+  if (windspeed < 39) {
+    let div5 = document.getElementById("hurricane-output")
+    div5.innerHTML = "The skies are calm...";
   }
 
 
