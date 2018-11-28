@@ -56,6 +56,8 @@ function mario() {
  * All output should be displayed on the page, not printed to the console.
  */
 
+}   
+
 function marioAgain() {
 
   ////////////// DO NOT MODIFY
