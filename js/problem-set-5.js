@@ -56,7 +56,7 @@ function mario() {
  * All output should be displayed on the page, not printed to the console.
  */
 
-}   
+}
 
 function marioAgain() {
 
@@ -157,6 +157,7 @@ function credit() {
 
 function guess() {
 
+
   // WRITE YOUR EXERCISE 4 CODE HERE
 
   ////////////////// DO NOT MODIFY
@@ -198,14 +199,14 @@ function hurricane() {
 
   windspeed = parseInt(windspeed);
 
-  while (windspeed < 0) {
-    windspeed = prompt('Enter a positive integer for your windspeed');
-    windspeed = parseInt(windspeed);
+    while (windspeed < 0) {
+      windspeed = prompt('Entry Invalid. Re-enter a non-negative integer.');
+      windspeed = parseInt(windspeed);
 
-  }
+    }
 
   while (Number.isInteger(windspeed) == false) {
-    windspeed = prompt('Enter a positive integer for your windspeed');
+    windspeed = prompt('Entry Invalid. Re-enter a non-negative integer.');
     windspeed = parseInt(windspeed);
 
   }
@@ -282,6 +283,74 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+
+  do {
+    scoreOne = Number(prompt("what is the first score?"));
+  } while (scoreOne < 0.0 || scoreOne > 10.0);
+  scores.push(scoreOne);
+  do {
+    scoreTwo = Number(prompt("what is the second score?"));
+  } while (scoreTwo < 0.0 || scoreTwo > 10.0);
+  scores.push(scoreTwo);
+  do {
+    scoreThree = Number(prompt("what is the third score?"));
+  } while (scoreThree < 0.0 || scoreThree > 10.0);
+  scores.push(scoreThree);
+  do {
+    scoreFour = Number(prompt("what is the fourth score?"));
+  } while (scoreFour < 0.0 || scoreFour > 10.0);
+  scores.push(scoreFour);
+  do {
+    scoreFive = Number(prompt("what is the fifth score?"));
+  } while (scoreFive < 0.0 || scoreFive > 10.0);
+  scores.push(scoreFive);
+  do {
+    scoreSix = Number(prompt("what is the sixth score?"));
+  } while (scoreSix < 0.0 || scoreSix > 10.0);
+  scores.push(scoreSix);
+
+  total = scores.reduce((a,b) => a + b, 0)
+  let l = scores.indexOf(Math.min(...scores));
+  let low = scores[1];
+  let h = scores.indexOf(Math.max(...scores));
+  let high = scores[h];
+  let avg = ((total - low - high) / (scores.length-2)).toFixed(2);
+
+  let op = document.getElementById("gymnastics-output");
+  op.innerHTML = `Discarded: ${low}, ${high}<br/>Score: ${avg}`;
+
+  //let firstScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your first score"));
+//  let secondScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your second score"));
+///  let thirdScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your third score"));
+///  let fourthScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your fourth score"));
+//  let fifthScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your fifth score"));
+//  let sixthScore = Number(prompt("Please enter a number between 1.0 and 10.0 for your sixth score"));
+
+//  score.push(secondScore);
+  ///score.push(thirdScore);
+  ///score.push(fourthScore);
+  ///score.push(fifthScore);
+///  score.push(sixthScore);
+
+//  while (scores < 1.0) {
+///  firstScore = (Number.isInteger(firstScore))? firstScore = firstScore : prompt("No! Enter a number between 1.0 and 10.0 as you were prompted before");
+
+  ///total = firstScore + secondScore + thirdScore + fourthScore + fifthScore + sixthScore;
+
+  //let maximum = Math.max(...scores);
+  //let minimum = Math.min(...scores);
+
+//  let discarded = document.getElementById("gymnastics-output");
+//  discarded.innerHTML = "Discarded: " + minimum + ", " + maximum;
+
+//  let minimumIndex = scores.indexof(minimum);
+//  let maximumIndex = scores.indexof(maximum);
+
+//  scores.splice(maximumIndex);
+//  scores.splice(minimumIndex);
+
+//  console.log(scores);
+//}
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
