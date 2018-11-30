@@ -362,6 +362,47 @@ function reportCard() {
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
+  while (true) {
+    let testsInput = prompt("enter your test grade. Type -1 if finished entering test grades.");
+    if (testsInput == -1) {
+      break;
+    }
+    if (Number(testsInput) >= 0 && Number(testsInput <= 100)) {
+      testTotal = Number(testsInput) + testTotal;
+      tests++;
+    }
+  }
+
+  while (true) {
+    let quizzesInput = prompt("enter your quiz grades. Type -1 if finished entering quiz grades.");
+    if (quizzesInput == -1) {
+      break;
+    }
+  }
+  if (Number(quizzesInput) >= 0 && Number(quizzesInput <= 100)) {
+    quizTotal = Number(quizzesInput) + quizTotal;
+    quizzes++;
+  }
+
+  while (true) {
+    let homeworksInput = prompt("enter your homework grades. Type -1 if finished entering homework grades.")
+    if (homeworksInput == -1) {
+      break;
+    }
+  }
+  if (Number(homeworksInput) >= 0 && Number(homeworksInput <= 100)) {
+    homeworkTotal = Number(homeworkTotal) + homeworkTotal;
+    homeworks++;
+  }
+
+
+
+
+
+
+
+
+
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
    *       representative of the number of tests, quizzes, and homework
