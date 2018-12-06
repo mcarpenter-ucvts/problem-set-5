@@ -27,6 +27,30 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE
+  while (true){
+    height=prompt("Please enter a valid height");
+    height=Number(height);
+    if(height>=1 && height<=23 && Number.isInteger(height)){
+      break;
+    };
+  };
+  let i=1;
+  let hash='#';
+  let lines="<code>";
+  let spaces=height-2;
+
+  while (i<=height){
+    let a='';
+    for(let j=0;j<=spaces;j++) {
+      a+='&nbsp;';
+    }
+    spaces--;
+    hash=hash+'#';
+    lines=lines+a+hash+"</br>";
+    i++;
+  }
+  document.getElementById("mario-easy-output").innerHTML=lines;
+  lines=lines+"</code>"
 
 
   ////////////////////////// DO NOT MODIFY
@@ -65,8 +89,30 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-
-
+  while (true){
+    height=prompt("Please enter a valid height");
+    height=Number(height);
+    if(height>=1 && height<=23 && Number.isInteger(height)){
+      break;
+    };
+  };
+  let i=1;
+  let hash='#';
+  let lines="<code>";
+  let spaces_Before=height-2;
+  let spaces_After='&nbsp'+'&nbsp';
+  while (i<=height){
+    let a='';
+    for(let j=0;j<=spaces_Before;j++) {
+      a+='&nbsp;';
+    }
+    spaces_Before--;
+    hash=hash+'#';
+    lines=lines+a+hash+spaces_After+hash+"</br>";
+    i++;
+  }
+  document.getElementById("mario-hard-output").innerHTML=lines;
+  lines=lines+"</code>"
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
@@ -119,6 +165,44 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+  let=odd_sum=0
+  let even_sum=0
+  while (true){
+    card=prompt("enter your credit card number: ");
+    if((card.length==16 || card.length==15 || card.length==13) && Number.isInteger(Number(card))){
+      break;
+    }
+  }
+  for(let i=card.length-2;1>=0;i-=2) {
+    let num=Number(card[i])*2;
+    let strnum=num.toString();
+    let sum_num=0;
+    for (let j=0;j<strnum.length;j++){
+      sum_num=sum_num+Number(strnum[j]);
+    }
+    even_sum=sum_num+even_sum;
+    console.log(even_sum);
+  }
+  for(let k=card.length-1; k>0;k-=2){
+    odd_sum=odd_sum+Number(card[k])
+  }
+  console.log(odd_sum);
+
+  if (card.length==15 && (card[0]==3 &&(card[1]==7 || card[1==4])) && (odd_sum+even_sum)%10==0){
+    document.getElementById("credit-output").innerHTML="<img src='./images/amex.png'/>";
+  }
+  else if ((card.length==13 || card.length==16) && card[0]==4 && (odd_sum+even_sum)%10==0){
+    document.getElementById("credit-output").innerHTML="<img src='./images/visa.png'/>";
+  }
+  else if (card.length==16 && (card[0]==5 && (card[1]==1 || card[1]==2 || card[1]==4 || card[1]==5)) && (odd_sum+even_sum)%10==0){
+    document.getElementById("credit-output").innerHTML="<img src='./images/mastercard.png'/>";
+  }
+  else {
+    document.getElementById("credit-output").innerHTML="<img src='./images/invalid.png'/>";
+  }
+
+
+  card=Number(card);
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
