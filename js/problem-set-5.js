@@ -192,7 +192,7 @@ function credit() {
       for(let cCard= card.length-1; cCard>= 0;cCard-=2){
         secondSum = secondSum + Number(card[cCard])
       }
-      
+
       console.log(secondSum);
 
       if (card.length == 15 && (card[0] == 3 &&(card[1] == 7 || card[1] == 4)) && (firstSum + secondSum )% 10 == 0){
@@ -217,7 +217,7 @@ function credit() {
       let div3=document.getElementById("credit-output")
       div3.innerHTML = "";
     }
-   
+
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -340,7 +340,7 @@ function hurricane() {
   }
 
 
-  if (windspeed > 157) {
+  if (windspeed >= 157) {
     let div5 = document.getElementById("hurricane-output")
     div5.innerHTML = "Category 5 Hurricane.";
 
